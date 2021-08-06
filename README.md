@@ -4,11 +4,12 @@ Reading list for Learning Terraform
 ## Setup Lab with Proxmox
 Requirement for Terraform lab with Proxmox
 * Proxmox host: a computer with installed Proxmox.
+* Download `Ubuntu Cloud Image` from [Ubuntu website](https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img)
 * Management host: management host for run command and build template with following tools
   * [Packer](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli#installing-packer)
   * [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform)
   * [Qemu/KVM](https://github.com/behradeslamifar/Linux-Professional-Institute-Certifications/tree/main/LPI304/labs#3303-kvm)
-* Download `Ubuntu Cloud Image` from [Ubuntu website](https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img)
+  * [MinIO](https://docs.min.io/docs/deploy-minio-on-docker-compose.html)
 
 ### Version Table
 Version of all tools that use in this repo
@@ -21,32 +22,32 @@ Version of all tools that use in this repo
 | Qemu-kvm  | 4.2         |
 
 ## Objectives
-1. Understand infrastructure as code (IaC) concepts
+#### 1. Understand infrastructure as code (IaC) concepts
   * 1a Explain what IaC is
   * 1b Describe advantages of IaC patterns
-2. Understand Terraform's purpose (vs other IaC)
+#### 2. Understand Terraform's purpose (vs other IaC)
   * 2a	Explain multi-cloud and provider-agnostic benefits
   * 2b	Explain the benefits of state
-3. Understand Terraform basics
+#### 3. Understand Terraform basics
   * 3a	Handle Terraform and provider installation and versioning
   * 3b	Describe plugin based architecture
   * 3c	Demonstrate using multiple providers
   * 3d	Describe how Terraform finds and fetches providers
   * 3e	Explain when to use and not use provisioners and when to use local-exec or remote-exec
-4. Use the Terraform CLI (outside of core workflow)
+#### 4. Use the Terraform CLI (outside of core workflow)
   * 4a	Given a scenario: choose when to use terraform fmt to format code
   * 4b	Given a scenario: choose when to use terraform taint to taint Terraform resources
   * 4c	Given a scenario: choose when to use terraform import to import existing infrastructure into your Terraform state
   * 4d	Given a scenario: choose when to use terraform workspace to create workspaces
   * 4e	Given a scenario: choose when to use terraform state to view Terraform state
   * 4f	Given a scenario: choose when to enable verbose logging and what the outcome/value is
-5. Interact with Terraform modules
+#### 5. Interact with Terraform modules
   * 5a	Contrast module source options
   * 5b	Interact with module inputs and outputs
   * 5c	Describe variable scope within modules/child modules
   * 5d	Discover modules from the public Terraform Module Registry
   * 5e	Defining module version
-6. Navigate Terraform workflow
+#### 6. Navigate Terraform workflow
   * 6a	Describe Terraform workflow ( Write -> Plan -> Create )
   * 6b	Initialize a Terraform working directory (terraform init)
   * 6c	Validate a Terraform configuration (terraform validate)
@@ -61,7 +62,7 @@ Version of all tools that use in this repo
   * 7e	Describe effect of Terraform refresh on state
   * 7f	Describe backend block in configuration and best practices for partial configurations
   * 7g	Understand secret management in state files
-* 8	Read, generate, and modify configuration
+#### 8. Read, generate, and modify configuration
   * 8a	Demonstrate use of variables and outputs
   * 8b	Describe secure secret injection best practice
   * 8c	Understand the use of collection and structural types
@@ -70,7 +71,7 @@ Version of all tools that use in this repo
   * 8f	Use Terraform built-in functions to write configuration
   * 8g	Configure resource using a dynamic block
   * 8h	Describe built-in dependency management (order of execution based)
-* 9	Understand Terraform Cloud and Enterprise capabilities
+#### 9. Understand Terraform Cloud and Enterprise capabilities
   * 9a	Describe the benefits of Sentinel, registry, and workspaces
   * 9b	Differentiate OSS and TFE workspaces
   * 9c	Summarize features of Terraform Cloud
