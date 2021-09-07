@@ -1,4 +1,4 @@
-# Terraform Lab
+# Terraform Lab with Proxmox
 
 ## Install Proxmox
 * Download latest version of Proxmox Virtual Environment (PVE) from [Download page](https://www.proxmox.com/en/downloads/category/iso-images-pve).
@@ -54,4 +54,26 @@ qm resize 9000 scsi0 15G
 * Convert basic vm to template
 ```
 qm template 9000
+```
+
+# Terraform Lab with VirtualBox
+## Terraform-provider-virtualbox Bug
+**[ERROR] Setup VM properties: exit status 1**  
+Temperorily resolved by wrapper for VBoxManage that suggeste [here](https://github.com/terra-farm/terraform-provider-virtualbox/issues/105)
+```
+#!/bin/bash
+declare -a ARGS
+for var in "$@"; do
+    # Ignore known bad arguments
+    if [ "$var" = '--synthcpu' ]; then
+	DNEXT=1
+        continue
+    fi
+    if [ ! -z "${DNEXT}" ]; then
+	DNEXT=""
+	continue
+    fi
+    ARGS[${#ARGS[@]}]="$var"
+done
+/usr/bin/VBoxManage "${ARGS[@]}"
 ```
